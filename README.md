@@ -2,25 +2,17 @@
 
 ## Table of Contents
 
-- [Clustering and Topic Modeling of COVID-19 Research Articles](#clustering-and-topic-modeling-of-covid-19-research-articles)
-  - [Table of Contents](#table-of-contents)
-  - [Project Overview](#project-overview)
-  - [Setup](#setup)
-    - [Load and Import Libraries](#load-and-import-libraries)
-  - [Data Preprocessing](#data-preprocessing)
-    - [Load Dataset](#load-dataset)
-    - [Text Processing](#text-processing)
-  - [Feature Extraction](#feature-extraction)
-  - [Dimensionality Reduction](#dimensionality-reduction)
-  - [Clustering](#clustering)
-    - [Elbow Method](#elbow-method)
-    - [Clustering Methods](#clustering-methods)
-  - [t-SNE](#t-sne)
-  - [Topic Modeling](#topic-modeling)
-    - [Apply LDA and NMF](#apply-lda-and-nmf)
-  - [Interactive Plot](#interactive-plot)
-  - [Contributors](#contributors)
-  - [Collaboration](#collaboration)
+- [Project Overview](#project-overview)
+- [Setup](#setup)
+- [Data Preprocessing](#data-preprocessing)
+- [Feature Extraction](#feature-extraction)
+- [Dimensionality Reduction](#dimensionality-reduction)
+- [Clustering](#clustering)
+- [t-SNE](#t-sne)
+- [Topic Modeling](#topic-modeling)
+- [Interactive Plot](#interactive-plot)
+- [Contributors](#contributors)
+- [Collaboration](#collaboration)
 
 ## Project Overview
 
