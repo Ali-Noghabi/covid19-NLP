@@ -2,17 +2,25 @@
 
 ## Table of Contents
 
-1. [Project Overview](#project-overview)
-2. [Setup](#setup)
-3. [Data Preprocessing](#data-preprocessing)
-4. [Feature Extraction](#feature-extraction)
-5. [Dimensionality Reduction](#dimensionality-reduction)
-6. [Clustering](#clustering)
-7. [Visualization](#visualization)
-8. [Topic Modeling](#topic-modeling)
-9. [Interactive Plot](#interactive-plot)
-10. [Contributors](#contributors)
-11. [Collaboration](#collaboration)
+- [Clustering and Topic Modeling of COVID-19 Research Articles](#clustering-and-topic-modeling-of-covid-19-research-articles)
+  - [Table of Contents](#table-of-contents)
+  - [Project Overview](#project-overview)
+  - [Setup](#setup)
+    - [Load and Import Libraries](#load-and-import-libraries)
+  - [Data Preprocessing](#data-preprocessing)
+    - [Load Dataset](#load-dataset)
+    - [Text Processing](#text-processing)
+  - [Feature Extraction](#feature-extraction)
+  - [Dimensionality Reduction](#dimensionality-reduction)
+  - [Clustering](#clustering)
+    - [Elbow Method](#elbow-method)
+    - [Clustering Methods](#clustering-methods)
+  - [t-SNE](#t-sne)
+  - [Topic Modeling](#topic-modeling)
+    - [Apply LDA and NMF](#apply-lda-and-nmf)
+  - [Interactive Plot](#interactive-plot)
+  - [Contributors](#contributors)
+  - [Collaboration](#collaboration)
 
 ## Project Overview
 
@@ -72,7 +80,7 @@ The dataset comprises information on 10,000 articles in a CSV file, including:
 
 Load the dataset and perform initial preprocessing:
 
-#### download csv files:
+**download csv files:**
 - [10k dataframe](https://drive.google.com/uc?id=15E8FLX0C-6qpK-lDBEQJXw00Lsdcvjae)
 - [pre processed](https://drive.google.com/uc?id=18Ju-NDzJZbdD0d_Zb-UFekYjVxBweMwE)
 - [tfidf vectors](https://drive.google.com/uc?id=1V0VHdYwOPFMQhdyzYonPZYkqQsLhyjBd)
@@ -192,10 +200,7 @@ Apply various clustering methods and evaluate their performance using Silhouette
   ```
   ![DBSCAN](img/DBSCAN.svg)
 
-## Visualization
-
-### t-SNE
-
+## t-SNE
 Visualize the clusters using t-SNE:
 
 ```python
@@ -206,29 +211,6 @@ plt.title('t-SNE with no Labels')
 plt.show()
 ```
 ![DBSCAN](img/t-SNE.svg)
-
-
-### Clusters Visualization
-
-Visualize clusters for different clustering methods:
-
-```python
-def plot_clusters(data, labels, title):
-    plt.figure(figsize=(10, 6))
-    unique_labels = set(labels)
-    colors = [plt.cm.Spectral(each) for each in np.linspace(0, 1, len(unique_labels))]
-
-    for k, col in zip(unique_labels, colors):
-        if k == -1:
-            col = [0, 0, 0, 1]
-
-        class_member_mask = (labels == k)
-        xy = data[class_member_mask]
-        plt.plot(xy[:, 0], xy[:, 1], 'o', markerfacecolor=tuple(col), markeredgecolor='k', markersize=6)
-
-    plt.title(title)
-    plt.show()
-```
 
 ## Topic Modeling
 
